@@ -20,13 +20,13 @@
 >>> Entry.objects.rev(2).get(pk=1).text
 'test test test'
 >>> e = Entry.objects.get(pk=1)
->>> e.get_changed_revisions()
-[8, 7, 6, 4, 2]
 >>> f = Entry.objects.get(pk=2)
->>> f.get_changed_revisions()
-[5, 3]
 >>> e.get_revisions()
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 >>> f.get_revisions()
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+>>> e.get_changed_revisions()
+[8, 7, 6, 4, 2]
+>>> f.get_changed_revisions()
+[5, 3]
 }}}
