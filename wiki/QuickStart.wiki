@@ -7,3 +7,25 @@
   * run manage.py runserver, go to http://127.0.0.1:8000/admin/ and add some items to the example/entry model
   * do multiple edits on the entries
   * run manage.py shell and poke around with the api
+
+= Some API examples =
+
+>>> from example.models import Entry
+>>> Entry.objects.get(pk=1)
+<Entry: foo>
+>>> Entry.objects.get(pk=1).text
+'lorem ipsum dolor sit'
+>>> Entry.objects.rev(1).get(pk=1).text
+''
+>>> Entry.objects.rev(2).get(pk=1).text
+'test test test'
+>>> e = Entry.objects.get(pk=1)
+[8, 7, 6, 4, 2]
+>>> f = Entry.objects.get(pk=2)
+>>> f.get_changed_revisions()
+[5, 3]
+>>> e.get_revisions()
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+>>> f.get_revisions()
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
