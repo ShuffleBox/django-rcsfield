@@ -9,7 +9,7 @@
   * run manage.py shell and poke around with the api
 
 = Some API examples =
-
+{{{
 >>> from example.models import Entry
 >>> Entry.objects.get(pk=1)
 <Entry: foo>
@@ -28,4 +28,4 @@
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 >>> f.get_revisions()
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
+}}}
