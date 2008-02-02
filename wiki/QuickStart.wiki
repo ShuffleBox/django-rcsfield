@@ -1,4 +1,5 @@
 #summary How to get started quick and dirty.
+#labels Featured,Phase-Deploy
 
 = Quick start how-to for django-rcsfield =
 
