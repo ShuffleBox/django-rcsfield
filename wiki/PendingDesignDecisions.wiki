@@ -1,5 +1,5 @@
 #labels Phase-Design
-#decisions to be made
+# decisions to be made
 
 = Pending Design Decisions =
 
