@@ -1,4 +1,6 @@
 #labels Phase-Design
+#decisions to be made
+
 = Pending Design Decisions =
 
 This is a proposal of things, which should be changed in the near future, but i'm open for comments on the decisions:
@@ -27,4 +29,3 @@ API example:
 >>> c.get_changed_revisions()
 [1,6]
 }}}
-
