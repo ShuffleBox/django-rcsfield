@@ -1,0 +1,30 @@
+#labels Phase-Design
+= Pending Design Decisions =
+
+This is a proposal of things, which should be changed in the near future, but i'm open for comments on the decisions:
+
+  * rename `VersionizedTextField()` to `RcsTextField()` to better match the project name
+  * let every field be able to report it's available and it's changed versions (api change)
+  * refactor the revision manager to be a aggregating manager, which reports available and changed version aggregated for all versionized fields on the model
+
+API example:
+
+{{{
+>>> b = A.objects.get(pk=1)
+>>> c = A.objects.get(pk=2)
+>>> b.rcsfield1.get_revisions()
+[1,2,3,4,5,6]
+>>> b.rcsfield2.get_revisions()
+[1,2,3,4,5,6]
+>>> b.rcsfield1.get_changed_revisions()
+[2,4]
+>>> b.rcsfield2.get_changed_revisions()
+[3,5]
+>>> b.get_revisions()
+[1,2,3,4,5,6]
+>>> b.get_changed_revisions()
+[2,3,4,5]
+>>> c.get_changed_revisions()
+[1,6]
+}}}
+
