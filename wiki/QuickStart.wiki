@@ -3,6 +3,8 @@
 
 = Quick start how-to for django-rcsfield =
 
+*the description below is outdated, django-rcsfield is no longer checked out with a default project, you have to create your own project, and add rcsfield.RcsTextField to some of your models. API examples are still valid.*
+ 
   * checkout the code
   * run `manage.py syncdb`, you should see that rcsfield creates a bzr repo in the current project directory
   * run `manage.py runserver`, go to http://127.0.0.1:8000/admin/ and add some items to the example/entry model
