@@ -5,7 +5,7 @@
 
 This is a proposal of things, which should be changed in the near future, but i'm open for comments on the decisions:
 
-  * rename `VersionizedTextField()` to `RcsTextField()` to better match the project name
+  * ~~rename `VersionizedTextField()` to `RcsTextField()` to better match the project name~~(done)
   * let every field be able to report it's available and it's changed versions (api change)
 
 API example:
