@@ -6,25 +6,16 @@
 This is a proposal of things, which should be changed in the near future, but i'm open for comments on the decisions:
 
   * ~~rename `VersionizedTextField()` to `RcsTextField()` to better match the project name~~(done)
-  * let every field be able to report it's available and it's changed versions (api change)
+  * ~~let every field be able to report it's available and it's changed versions (api change)~~(done but adds a new feature request)
+  * a model should be able to provide all versions at which *any* field changed.
 
 API example:
 
 {{{
 >>> b = A.objects.get(pk=1)
 >>> c = A.objects.get(pk=2)
->>> b.rcsfield1.get_revisions()
-[1,2,3,4,5,6]
->>> b.rcsfield2.get_revisions()
-[1,2,3,4,5,6]
->>> b.rcsfield1.get_changed_revisions()
-[2,4]
->>> b.rcsfield2.get_changed_revisions()
+>>> b.get_content_revisions() #content is the field-name. this works like the get_FOO_display() method for example
+[1,2,4,6]
+>>> c.get_text_revisions()
 [3,5]
->>> b.get_revisions()
-[1,2,3,4,5,6]
->>> b.get_changed_revisions()
-[2,3,4,5]
->>> c.get_changed_revisions()
-[1,6]
 }}}
