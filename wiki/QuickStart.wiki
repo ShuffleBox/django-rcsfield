@@ -3,6 +3,9 @@
 
 = Quick start how-to for django-rcsfield =
 
+Additionally to this page please read the Blog post of Will Larson about setting up django-rcsfield: http://lethain.com/entry/2008/oct/15/setting-up-django-rcsfield/ 
+It describes the available settings variable etc.
+
 In your models.py import the field and optionaly the manager:
 
 {{{
